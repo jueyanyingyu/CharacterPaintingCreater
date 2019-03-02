@@ -9,8 +9,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Transformer {
-	static int c = 5;
-	static int precision = 5;
+	static int c = 1;
+	static int precision = 16;
 	static double h_w = 1.5;
 	static int fontSize = (int) (precision);
 	public static char[] charList = "WNB8b271=\";-,_. ".toCharArray();
@@ -35,7 +35,7 @@ public class Transformer {
 				g = (rgb & 0x00ff00) >> 8;
 				b = (rgb & 0x0000ff);
 
-				targetData[i][j] = charList[(int) ((0.3 * r + 0.59 * g + 0.11 * b) / 16)];
+				targetData[i][j] = charList[(int) ((0.3 * r + 0.59 * g + 0.11 * b)/17)];
 			}
 		}
 		characterPaintingData = new BufferedImage((int) (imageData.getWidth() * fontSize),
